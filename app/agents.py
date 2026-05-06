@@ -6,8 +6,9 @@ from app.tools import search_hotels, get_checkin
 from app.utils import normalize_time
 
 load_dotenv()
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
+print("KEY:", os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def extract_info(query):
     prompt = f"""
@@ -73,3 +74,5 @@ def smart_agent(query):
 
     except Exception as e:
         return {"result": [], "error": str(e)}
+    
+   

@@ -8,7 +8,7 @@ query = st.text_input("Ask your query")
 if st.button("Search"):
 
     res = requests.get(
-        "http://127.0.0.1:8000/agent",
+        "https://staybuddy-ai-agent.onrender.com/agent",
         params={"query": query}
     )
 
